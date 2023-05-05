@@ -1,6 +1,7 @@
-FROM alpine:latest
-RUN apk add --update nginx
-COPY index.html /var/www/html/
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-
+FROM node:14-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --production
+COPY . .
+EXPOSE 3000
+CMD [ "npm", "start" ]
