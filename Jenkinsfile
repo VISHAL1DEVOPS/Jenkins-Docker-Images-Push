@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push 9423394921/alpine'
+        sh 'docker push 94233949/alpine'
       }
     }
   }
