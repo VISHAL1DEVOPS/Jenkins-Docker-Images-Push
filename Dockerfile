@@ -1,7 +1,11 @@
-FROM node:14-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install --production
-COPY . .
-EXPOSE 3000
-CMD [ "npm", "start" ]
+# Use an existing base image
+FROM alpine
+
+# Copy a file into the image
+COPY hello.txt /usr/src/
+
+# Set the working directory
+WORKDIR /usr/src/
+
+# Run a command within the image
+CMD ["cat", "hello.txt"]
