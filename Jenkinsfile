@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t 94233949/alpine .'
+        sh 'docker build -t 94233949/jenkins-docker-hub .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push 94233949/alpine'
+        sh 'docker push 9423394921/jenkins-docker-hub'
       }
     }
   }
